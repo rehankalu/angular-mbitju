@@ -11,7 +11,7 @@ import {DemoMaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 
-import {CardOverviewExample} from './app/cards/card-overview-example';
+import {CardOverviewExample} from './app/plane-list/card-overview-example';
 import { TopBarComponent } from './app/top-bar/top-bar.component';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
