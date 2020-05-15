@@ -92,6 +92,28 @@ label {
   cursor: auto;
 }
 
+.close-button, close-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #d21919;
+  color: white;
+  border: none;
+}
+
+.close-button:hover, close-button:hover {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.close-button:disabled, close-button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
 /* Fancy Button */
 
 .fancy-button {
@@ -114,7 +136,7 @@ app-top-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: right;
 }
 
 app-top-bar h1 {

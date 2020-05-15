@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ts_pass_plane_data } from "../list";
+import { plane_data } from "../list";
 
 /**
  * @title Basic cards
@@ -12,12 +12,14 @@ import { ts_pass_plane_data } from "../list";
   styleUrls: ['card-overview-example.css'],
 })
 export class CardOverviewExample {
-  html_pass_plane_data = ts_pass_plane_data;
+  html_pass_plane_data = plane_data;
   wingspanMin = new FormControl('');
   wingspanMax = new FormControl('50');
+  wingareaMin = new FormControl('');
+  wingareaMax = new FormControl('1000');
 
   addPlane() {
-    this.html_pass_plane_data.push({ name: Math.random().toString(36).substring(7), wingspan: Math.random(), picture: { url: 'https://dummyimage.com/600x400/000/fff' } })
+    this.html_pass_plane_data.push({ name: Math.random().toString(36).substring(7), wingspan: 50, wingarea: 1000, description: '', mission: '', picture: { url: 'https://dummyimage.com/600x400/000/fff' } })
   }
 
 }

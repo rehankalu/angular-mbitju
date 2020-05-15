@@ -4,11 +4,59 @@
 <label>
   Minimum Wingspan:
   <input type="text" [formControl]="wingspanMin">
-</label>
-<label>
   Maximum Wingspan:
   <input type="text" [formControl]="wingspanMax">
 </label>
+<label>
+  Minimum Wing Area:
+  <input type="text" [formControl]="wingareaMin">
+  Maximum Wing Area:
+  <input type="text" [formControl]="wingareaMax">
+<label>
+  
+</label>
+<hr>
+<br>
+
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+	<mat-grid-list cols="5">
+		<div *ngFor="let plane of html_pass_plane_data">
+			<mat-grid-tile>
+				<div *ngIf="plane.wingspan >= wingspanMin.value && plane.wingspan <= wingspanMax.value && plane.wingarea >= wingareaMin.value && plane.wingarea <= wingareaMax.value">
+					<mat-card style="margin:2em;padding-top:100;padding-left:0;padding-right:0;padding-bottom:100;">
+            <mat-card-actions>
+							<button>X</button>
+						</mat-card-actions>
+						<mat-card-header>
+							<div mat-card-avatar class="example-header-image"></div>
+							<mat-card-title style="font-size:20px;text-align:left">{{ plane.name }} </mat-card-title>
+							<mat-card-subtitle>{{ plane.mission }} </mat-card-subtitle>
+						</mat-card-header>
+						<img mat-card-lg-image src="{{ plane.picture.url }}" alt="Photo of a {{ plane.name }}">
+            <br>
+						<mat-card-content>
+							<p>
+								The {{ plane.name }} is a {{ plane.description }}
+							</p>
+							<p>
+								Wingspan: {{ plane.wingspan }} ft
+							</p>
+              <p>
+                Wing Area: {{ plane.wingarea }} ft^2
+							</p>
+						</mat-card-content>
+						<!-- <mat-card-actions>
+							<button mat-button>LIKE</button>
+							<button mat-button>SHARE</button>
+						</mat-card-actions>-->
+					</mat-card>
+					<br>
+        </div>
+			</mat-grid-tile>
+		</div>
+	</mat-grid-list>
+</div>
+<br>
 
 <div class="container" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
 	<mat-card fxFlex="0 1 calc(20% - 20px)" (click)="addPlane()" class="html_pass_plane_data">
@@ -18,33 +66,6 @@
 	</mat-card>
 </div>
 
-<div *ngFor="let plane of html_pass_plane_data">
-	<div *ngIf="plane.wingspan > wingspanMin.value && plane.wingspan < wingspanMax.value">
-		<mat-card width=100px>
-			<mat-card-header>
-				<div mat-card-avatar class="example-header-image"></div>
-				<mat-card-title>{{ plane.name }} </mat-card-title>
-				<mat-card-subtitle>{{ plane.mission }} </mat-card-subtitle>
-			</mat-card-header>
-			<img mat-card-image src="{{ plane.picture.url }}" alt="'Photo of a ' plane.name">
-			<mat-card-content>
-				<p>
-					The {{ plane.name }} is a {{ plane.description }}
-				</p>
-				<p>
-					Wingspan: {{ plane.wingspan }} ft
-				</p>
-			</mat-card-content>
-			<mat-card-actions>
-				<button mat-button>LIKE</button>
-				<button mat-button>SHARE</button>
-			</mat-card-actions>
-		</mat-card>
-		<br>
-</div>
-	</div>
-
-
-	<!-- Copyright 2019 Google LLC. All Rights Reserved.
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at http://angular.io/license -->
