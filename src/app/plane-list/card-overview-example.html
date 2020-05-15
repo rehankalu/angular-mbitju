@@ -4,11 +4,19 @@
 <app-quantitative-filter></app-quantitative-filter>
 
 <label>
-  Minimum Wingspan:
+  Minimum Wingspan
   <input type="text" [formControl]="wingspanMin">
-  Maximum Wingspan:
+  <mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  min="wingspanMin"
+  max="wingspanMax"></mat-slider>
+  
   <input type="text" [formControl]="wingspanMax">
+  Maximum Wingspan
 </label>
+
 <label>
   Minimum Wing Area:
   <input type="text" [formControl]="wingareaMin">
@@ -44,7 +52,7 @@
 								Wingspan: {{ plane.wingspan }} ft
 							</p>
               <p>
-                Wing Area: {{ plane.wingarea }} ft^2
+                Wing Area: {{ plane.wingarea }} ft<sup>2</sup>
 							</p>
 						</mat-card-content>
 						<!-- <mat-card-actions>
