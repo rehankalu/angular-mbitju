@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 
 import {CardOverviewExample} from './app/plane-list/card-overview-example';
 import { TopBarComponent } from './app/top-bar/top-bar.component';
+import { QuantitativeFilterComponent } from './app/quantitative-filter/quantitative-filter.component';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -31,7 +32,11 @@ import { TopBarComponent } from './app/top-bar/top-bar.component';
     ])
   ],
   entryComponents: [CardOverviewExample],
-  declarations: [CardOverviewExample, TopBarComponent],
+  declarations: [
+    CardOverviewExample, 
+    TopBarComponent, 
+    QuantitativeFilterComponent
+  ],
   bootstrap: [CardOverviewExample],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
