@@ -1,0 +1,61 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+}
+
+.list{
+  min-height: 250px;
+  margin-bottom: 25px; /* same as fxLayoutGap for even distribution */
+
+  /* additional styling */
+}
+
+.mat-card {
+    padding: 18px !important; // less padding than per default
+}
+
+.mat-card-image {
+    width: calc(100% + 36px) !important; // update padding
+    margin: 0 -24px 16px -18px !important; // update padding
+}
+
+.mat-tab-label {
+    font-size: 16px !important;
+}
+
+.mat-card-title {
+    font-size:24px !important;
+    font-weight: 500 !important;
+}
+
+.mat-card-content {
+    font-size: 14px !important;
+    min-height: 30px; // <--- to remove !!!
+}
+
+.product {
+    margin-bottom: 25px;
+    /*min-width: 180px;
+    text-align: center;*/
+} 
+
+/* desktop button */
+.mat-card-add-button {
+    border: 1px dashed grey;
+    box-shadow:none !important;
+    cursor:pointer;
+}
+
+/**  Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */

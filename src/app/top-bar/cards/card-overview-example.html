@@ -1,0 +1,50 @@
+<app-top-bar></app-top-bar>
+<br>
+
+<label>
+  Minimum Wingspan:
+  <input type="text" [formControl]="wingspanMin">
+</label>
+<label>
+  Maximum Wingspan:
+  <input type="text" [formControl]="wingspanMax">
+</label>
+
+<div class="container" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+	<mat-card fxFlex="0 1 calc(20% - 20px)" (click)="addPlane()" class="html_pass_plane_data">
+		<div>
+			<span style="font-size:32px;text-align:center">+<br />Add product</span>
+		</div>
+	</mat-card>
+</div>
+
+<div *ngFor="let plane of html_pass_plane_data">
+	<div *ngIf="plane.wingspan > wingspanMin.value">
+		<mat-card width=100px>
+			<mat-card-header>
+				<div mat-card-avatar class="example-header-image"></div>
+				<mat-card-title>{{ plane.name }} </mat-card-title>
+				<mat-card-subtitle>{{ plane.mission }} </mat-card-subtitle>
+			</mat-card-header>
+			<img mat-card-image src="{{ plane.picture.url }}" alt="'Photo of a ' plane.name">
+			<mat-card-content>
+				<p>
+					The {{ plane.name }} is a {{ plane.description }}
+				</p>
+				<p>
+					Wingspan: {{ plane.wingspan }} ft
+				</p>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-button>LIKE</button>
+				<button mat-button>SHARE</button>
+			</mat-card-actions>
+		</mat-card>
+		<br>
+</div>
+	</div>
+
+
+	<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
