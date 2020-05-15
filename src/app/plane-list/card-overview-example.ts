@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { ts_pass_plane_data } from ".../list";
+import { ts_pass_plane_data } from "../list";
 
 /**
  * @title Basic cards
@@ -14,7 +14,7 @@ import { ts_pass_plane_data } from ".../list";
 export class CardOverviewExample {
   html_pass_plane_data = ts_pass_plane_data;
   wingspanMin = new FormControl('');
-  wingspanMax = new FormControl('');
+  wingspanMax = new FormControl('50');
 
   addPlane() {
     this.html_pass_plane_data.push({ name: Math.random().toString(36).substring(7), wingspan: Math.random(), picture: { url: 'https://dummyimage.com/600x400/000/fff' } })

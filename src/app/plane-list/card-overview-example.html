@@ -13,13 +13,13 @@
 <div class="container" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
 	<mat-card fxFlex="0 1 calc(20% - 20px)" (click)="addPlane()" class="html_pass_plane_data">
 		<div>
-			<span style="font-size:32px;text-align:center">+<br />Add product</span>
+			<button style="font-size:32px;text-align:left">+ Add plane</button>
 		</div>
 	</mat-card>
 </div>
 
 <div *ngFor="let plane of html_pass_plane_data">
-	<div *ngIf="plane.wingspan > wingspanMin.value">
+	<div *ngIf="plane.wingspan > wingspanMin.value && plane.wingspan < wingspanMax.value">
 		<mat-card width=100px>
 			<mat-card-header>
 				<div mat-card-avatar class="example-header-image"></div>
