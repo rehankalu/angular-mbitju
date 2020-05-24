@@ -31,10 +31,13 @@
 <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
 	<mat-grid-list cols="5">
 		<ng-container *ngFor="let plane of html_pass_plane_data">
-			<mat-grid-tile>
-				<div *ngIf="plane.wingspan >= wingspanMin.value && plane.wingspan <= wingspanMax.value && plane.wingarea >= wingareaMin.value && plane.wingarea <= wingareaMax.value">
+
+			<ng-container
+				*ngIf="plane.wingspan >= wingspanMin.value && plane.wingspan <= wingspanMax.value && plane.wingarea >= wingareaMin.value && plane.wingarea <= wingareaMax.value">
+
+				<mat-grid-tile>
 					<mat-card style="margin:2em;padding-top:100;padding-left:0;padding-right:0;padding-bottom:100;">
-            <mat-card-actions>
+						<mat-card-actions>
 							<button>X</button>
 						</mat-card-actions>
 						<mat-card-header>
@@ -43,7 +46,7 @@
 							<mat-card-subtitle>{{ plane.mission }} </mat-card-subtitle>
 						</mat-card-header>
 						<img mat-card-lg-image src="{{ plane.picture.url }}" alt="Photo of a {{ plane.name }}">
-            <br>
+						<br>
 						<mat-card-content>
 							<p>
 								The {{ plane.name }} is a {{ plane.description }}
@@ -51,8 +54,8 @@
 							<p>
 								Wingspan: {{ plane.wingspan }} ft
 							</p>
-              <p>
-                Wing Area: {{ plane.wingarea }} ft<sup>2</sup>
+							<p>
+								Wing Area: {{ plane.wingarea }} ft<sup>2</sup>
 							</p>
 						</mat-card-content>
 						<!-- <mat-card-actions>
@@ -61,8 +64,10 @@
 						</mat-card-actions>-->
 					</mat-card>
 					<br>
-        </div>
 			</mat-grid-tile>
+
+			</ng-container>
+      
 		</ng-container>
 	</mat-grid-list>
 </div>
