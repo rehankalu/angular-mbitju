@@ -30,7 +30,7 @@
 
 <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
 	<mat-grid-list cols="5">
-		<div *ngFor="let plane of html_pass_plane_data">
+		<ng-container *ngFor="let plane of html_pass_plane_data">
 			<mat-grid-tile>
 				<div *ngIf="plane.wingspan >= wingspanMin.value && plane.wingspan <= wingspanMax.value && plane.wingarea >= wingareaMin.value && plane.wingarea <= wingareaMax.value">
 					<mat-card style="margin:2em;padding-top:100;padding-left:0;padding-right:0;padding-bottom:100;">
@@ -63,7 +63,7 @@
 					<br>
         </div>
 			</mat-grid-tile>
-		</div>
+		</ng-container>
 	</mat-grid-list>
 </div>
 <br>
