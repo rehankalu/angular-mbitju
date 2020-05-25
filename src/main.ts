@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import {CardOverviewExample} from './app/plane-list/card-overview-example';
 import { TopBarComponent } from './app/top-bar/top-bar.component';
 import { QuantitativeFilterComponent } from './app/quantitative-filter/quantitative-filter.component';
+//import { QuantitativeSliderComponent } from './app/quantitative-filter/quantitative-slider.component';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -35,7 +36,8 @@ import { QuantitativeFilterComponent } from './app/quantitative-filter/quantitat
   declarations: [
     CardOverviewExample, 
     TopBarComponent, 
-    QuantitativeFilterComponent
+    QuantitativeFilterComponent,
+    //QuantitativeSliderComponent
   ],
   bootstrap: [CardOverviewExample],
   providers: [
